@@ -1,5 +1,4 @@
 /* global process */
-
 const mysql = require('mysql2');
 const shell = require('shelljs');
 
@@ -14,7 +13,7 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
 	if (err) throw err;
-	shell.echo('✔️ Database conneted with success');
+	shell.echo('✔️  Database connected with success');
 });
 
 module.exports = connection;
