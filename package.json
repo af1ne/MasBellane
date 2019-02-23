@@ -1,5 +1,5 @@
 {
-  "name": "mas_bellane_backend",
+  "name": "mas-bellane-api",
   "version": "1.0.0",
   "description": "serveur nodeJS",
   "main": "index.js",
