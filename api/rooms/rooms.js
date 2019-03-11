@@ -1,18 +1,17 @@
 const express = require('express');
-const connection = require('../../config/environements/developement/database');
+const connection = require('../../config/environnements/developement/database');
 const Router = express.Router();
 
 Router
 	.route('/')
 
-// .get((req, res) => {
-// 	// SELECTION section + galerie
-// 	const getAllSection = 'SELECT `section`.*, `galerie`.* FROM`section` LEFT JOIN`section_has_galerie` ON`section_has_galerie`.`section_idsection` = `section`.`idsection` LEFT JOIN`galerie` ON`section_has_galerie`.`galerie_idgalerie` = `galerie`.`idgalerie`';
-//   connection.query(getAllSection, (err, result) => {
-// 		if (err) throw err;
-// 		return res.status(200).send(result);
-// 	});
-// })
+.get((req, res) => {
+	const getAllRooms = 'SELECT * FROM room WHERE idroom < 3';
+	connection.query(getAllRooms, (err, result) => {
+		if (err) throw err;
+		return res.status(200).send(result);
+	});
+})
 
 	.post((req, res) => {
 		const postNewRoom = 'INSERT INTO `room`(`title`, `subtitle`, `content`, `area`, `galerie_idgalerie`, `booking_idbooking`, `rate_idrate`) VALUES (?, ?, ?, ?, ?, ?, ?)';

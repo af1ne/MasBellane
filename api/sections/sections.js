@@ -1,18 +1,23 @@
 const express = require('express');
-const connection = require('../../config/environements/developement/database');
+const connection = require('../../config/environnements/developement/database');
 const Router = express.Router();
 
 Router
 	.route('/')
-
+	// .get((req, res) => {
+	// 	connection.query((err, result) => {
+	// 		if (err) throw err;
+	// 		return res.status(200).send(result, console.log('pouet'))
+	// 	});
+	// })
 	.get((req, res) => {
 		// SELECTION section + galerie
-		const getAllSection = 'SELECT `section`.*, `galerie`.* FROM`section` LEFT JOIN`section_has_galerie` ON`section_has_galerie`.`section_idsection` = `section`.`idsection` LEFT JOIN`galerie` ON`section_has_galerie`.`galerie_idgalerie` = `galerie`.`idgalerie`';
-    
+		// const getAllSections = 'SELECT `section`.*, `galerie`.* FROM`section` LEFT JOIN`section_has_galerie` ON`section_has_galerie`.`section_idsection` = `section`.`idsection` LEFT JOIN`galerie` ON`section_has_galerie`.`galerie_idgalerie` = `galerie`.`idgalerie`';
+		const getAllSections = 'SELECT * from section';
 		// SELECTION section + galerie + pictures
 		// const sql = 'SELECT `section`.*, `section_has_galerie`.*, `galerie`.*, `galerie_has_picture`.*, `picture`.* FROM `section` LEFT JOIN `section_has_galerie` ON `section_has_galerie`.`section_idsection` = `section`.`idsection` LEFT JOIN `galerie` ON `section_has_galerie`.`galerie_idgalerie` = `galerie`.`idgalerie` LEFT JOIN `galerie_has_picture` ON `galerie_has_picture`.`galerie_idgalerie` = `galerie`.`idgalerie` LEFT JOIN `picture` ON `galerie_has_picture`.`picture_idpicture` = `picture`.`idpicture`';
-    
-		connection.query(getAllSection, (err, result) => {
+
+		connection.query(getAllSections, (err, result) => {
 			if (err) throw err;
 			return res.status(200).send(result);
 		});
@@ -39,7 +44,7 @@ Router
 			return res.status(201).send(result);
 		});
 	});
-  
+
 Router
 	.route('/:idsection(\\d{2,})')
 	.get((req, res) => {

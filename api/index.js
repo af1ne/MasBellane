@@ -3,13 +3,15 @@ const Router = express.Router();
 
 // appel des différentes routes
 const admin = require('./admin/admin');
-const section = require('./sections/sections');
-const room = require('./rooms/room');
-const season = require ('./season/season');
+const sections = require('./sections/sections');
+const rooms = require('./rooms/rooms');
+const annex = require('./rooms/annex');
+const seasons = require ('./season/season');
 
 Router.use('/admin', admin);
-Router.use('/section', section);
-Router.use('/room', room);
-Router.use('/season', season);
+Router.use('/sections', sections);
+Router.use('/rooms', rooms);
+Router.use('/annex', annex);
+Router.use('/seasons', seasons);
 
 module.exports = Router;
