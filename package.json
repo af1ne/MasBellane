@@ -1,5 +1,5 @@
 {
-  "name": "mas_bellane_backend",
+  "name": "mas-bellane-api",
   "version": "1.0.0",
   "description": "serveur nodeJS",
   "main": "index.js",
@@ -9,20 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/af1ne/Mas_Bellane_Backend.git"
+    "url": "git+https://github.com/af1ne/mas-bellane-api"
   },
   "author": "Af1ne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/af1ne/Mas_Bellane_Backend/issues"
+    "url": "https://github.com/af1ne/mas-bellane-api/issues"
   },
-  "homepage": "https://github.com/af1ne/Mas_Bellane_Backend#readme",
+  "homepage": "https://github.com/af1ne/mas-bellane-api#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
